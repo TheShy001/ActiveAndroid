@@ -227,7 +227,11 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
 	    List<String> commands = SqlParser.parse(stream);
 
 	    for(String command : commands) {
-	        db.execSQL(command);
+	        try {
+				db.execSQL(command);
+			} catch (IOException e) {
+				Log.e("Failed to execute " + file, e);
+			}
 	    }
 	}
 
@@ -244,7 +248,11 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
             while ((line = buffer.readLine()) != null) {
                 line = line.replace(";", "").trim();
                 if (!TextUtils.isEmpty(line)) {
-                    db.execSQL(line);
+                   try {
+						db.execSQL(line);
+					} catch (IOException e) {
+						Log.e("Failed to execute " + file, e);
+					}
                 }
             }
 
