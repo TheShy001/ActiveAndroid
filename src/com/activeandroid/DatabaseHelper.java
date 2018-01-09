@@ -229,7 +229,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
 	    for(String command : commands) {
 	        try {
 				db.execSQL(command);
-			} catch (IOException e) {
+			} catch (Exception e) {
 				Log.e("Failed to execute " + file, e);
 			}
 	    }
@@ -250,7 +250,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
                 if (!TextUtils.isEmpty(line)) {
                    try {
 						db.execSQL(line);
-					} catch (IOException e) {
+					} catch (Exception e) {
 						Log.e("Failed to execute " + file, e);
 					}
                 }
