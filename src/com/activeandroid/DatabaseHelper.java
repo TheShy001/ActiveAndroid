@@ -230,7 +230,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
 	        try {
 				db.execSQL(command);
 			} catch (Exception e) {
-				Log.e("Failed to execute " + file, e);
+				Log.e("Failed to execute ", e);
 			}
 	    }
 	}
@@ -251,7 +251,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
                    try {
 						db.execSQL(line);
 					} catch (Exception e) {
-						Log.e("Failed to execute " + file, e);
+						Log.e("Failed to execute ", e);
 					}
                 }
             }
