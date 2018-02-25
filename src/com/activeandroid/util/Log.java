@@ -36,6 +36,7 @@ public final class Log {
 	//////////////////////////////////////////////////////////////////////////////////////
 
     public static boolean isEnabled() {
+	    
         return sEnabled;
     }
 
